@@ -12,7 +12,18 @@ public:
 	modelizer(QWidget *parent = 0);
 	~modelizer();
 
+
+	static LogWidget *Log;
+
+	
+private slots:
+
+	void on_actionImport_triggered();
+
 private:
+
+	void InitToolbar();
+
 	Ui::modelizerClass ui;
 };
 

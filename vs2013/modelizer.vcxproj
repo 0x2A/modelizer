@@ -46,8 +46,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\GeneratedFiles;.;$(QTDIR)\include;..\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;ASSIMP_BUILD_NO_C4D_IMPORTER;OPENDDLPARSER_BUILD;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\GeneratedFiles;.;$(QTDIR)\include;..\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;..\src;..\external\assimp\include;..\external\assimp\contrib\openddlparser\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -63,8 +63,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\GeneratedFiles;.;$(QTDIR)\include;..\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;ASSIMP_BUILD_NO_C4D_IMPORTER;OPENDDLPARSER_BUILD;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\GeneratedFiles;.;$(QTDIR)\include;..\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtWidgets;..\src;..\external\assimp\include;..\external\assimp\contrib\openddlparser\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -78,7 +78,193 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\external\assimp\code\3DSConverter.cpp" />
+    <ClCompile Include="..\external\assimp\code\3DSExporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\3DSLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\ACLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\ASELoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\ASEParser.cpp" />
+    <ClCompile Include="..\external\assimp\code\AssbinExporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\AssbinLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\Assimp.cpp" />
+    <ClCompile Include="..\external\assimp\code\AssimpCExport.cpp" />
+    <ClCompile Include="..\external\assimp\code\AssxmlExporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\B3DImporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\BaseImporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\BaseProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\Bitmap.cpp" />
+    <ClCompile Include="..\external\assimp\code\BlenderBMesh.cpp" />
+    <ClCompile Include="..\external\assimp\code\BlenderDNA.cpp" />
+    <ClCompile Include="..\external\assimp\code\BlenderLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\BlenderModifier.cpp" />
+    <ClCompile Include="..\external\assimp\code\BlenderScene.cpp" />
+    <ClCompile Include="..\external\assimp\code\BlenderTessellator.cpp" />
+    <ClCompile Include="..\external\assimp\code\BVHLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\C4DImporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\CalcTangentsProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\COBLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\ColladaExporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\ColladaLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\ColladaParser.cpp" />
+    <ClCompile Include="..\external\assimp\code\ComputeUVMappingProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\ConvertToLHProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\CSMLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\DeboneProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\DefaultIOStream.cpp" />
+    <ClCompile Include="..\external\assimp\code\DefaultIOSystem.cpp" />
+    <ClCompile Include="..\external\assimp\code\DefaultLogger.cpp" />
+    <ClCompile Include="..\external\assimp\code\DXFLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\Exporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXAnimation.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXBinaryTokenizer.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXConverter.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXDeformer.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXDocument.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXDocumentUtil.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXImporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXMaterial.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXMeshGeometry.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXModel.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXNodeAttribute.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXParser.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXProperties.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXTokenizer.cpp" />
+    <ClCompile Include="..\external\assimp\code\FBXUtil.cpp" />
+    <ClCompile Include="..\external\assimp\code\FindDegenerates.cpp" />
+    <ClCompile Include="..\external\assimp\code\FindInstancesProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\FindInvalidDataProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\FixNormalsStep.cpp" />
+    <ClCompile Include="..\external\assimp\code\GenFaceNormalsProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\GenVertexNormalsProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\glTFImporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\HMPLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\IFCBoolean.cpp" />
+    <ClCompile Include="..\external\assimp\code\IFCCurve.cpp" />
+    <ClCompile Include="..\external\assimp\code\IFCGeometry.cpp" />
+    <ClCompile Include="..\external\assimp\code\IFCLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\IFCMaterial.cpp" />
+    <ClCompile Include="..\external\assimp\code\IFCOpenings.cpp" />
+    <ClCompile Include="..\external\assimp\code\IFCProfile.cpp" />
+    <ClCompile Include="..\external\assimp\code\IFCReaderGen.cpp" />
+    <ClCompile Include="..\external\assimp\code\IFCUtil.cpp" />
+    <ClCompile Include="..\external\assimp\code\Importer.cpp" />
+    <ClCompile Include="..\external\assimp\code\ImporterRegistry.cpp" />
+    <ClCompile Include="..\external\assimp\code\ImproveCacheLocality.cpp" />
+    <ClCompile Include="..\external\assimp\code\IRRLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\IRRMeshLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\IRRShared.cpp" />
+    <ClCompile Include="..\external\assimp\code\JoinVerticesProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\LimitBoneWeightsProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\LWOAnimation.cpp" />
+    <ClCompile Include="..\external\assimp\code\LWOBLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\LWOLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\LWOMaterial.cpp" />
+    <ClCompile Include="..\external\assimp\code\LWSLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\MakeVerboseFormat.cpp" />
+    <ClCompile Include="..\external\assimp\code\MaterialSystem.cpp" />
+    <ClCompile Include="..\external\assimp\code\MD2Loader.cpp" />
+    <ClCompile Include="..\external\assimp\code\MD3Loader.cpp" />
+    <ClCompile Include="..\external\assimp\code\MD5Loader.cpp" />
+    <ClCompile Include="..\external\assimp\code\MD5Parser.cpp" />
+    <ClCompile Include="..\external\assimp\code\MDCLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\MDLLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\MDLMaterialLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\MS3DLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\NDOLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\NFFLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\ObjExporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\ObjFileImporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\ObjFileMtlImporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\ObjFileParser.cpp" />
+    <ClCompile Include="..\external\assimp\code\OFFLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\OgreBinarySerializer.cpp" />
+    <ClCompile Include="..\external\assimp\code\OgreImporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\OgreMaterial.cpp" />
+    <ClCompile Include="..\external\assimp\code\OgreStructs.cpp" />
+    <ClCompile Include="..\external\assimp\code\OgreXmlSerializer.cpp" />
+    <ClCompile Include="..\external\assimp\code\OpenGEXExporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\OpenGEXImporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\OptimizeGraph.cpp" />
+    <ClCompile Include="..\external\assimp\code\OptimizeMeshes.cpp" />
+    <ClCompile Include="..\external\assimp\code\PlyExporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\PlyLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\PlyParser.cpp" />
+    <ClCompile Include="..\external\assimp\code\PostStepRegistry.cpp" />
+    <ClCompile Include="..\external\assimp\code\PretransformVertices.cpp" />
+    <ClCompile Include="..\external\assimp\code\ProcessHelper.cpp" />
+    <ClCompile Include="..\external\assimp\code\Q3BSPFileImporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\Q3BSPFileParser.cpp" />
+    <ClCompile Include="..\external\assimp\code\Q3BSPZipArchive.cpp" />
+    <ClCompile Include="..\external\assimp\code\Q3DLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\RawLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\RemoveComments.cpp" />
+    <ClCompile Include="..\external\assimp\code\RemoveRedundantMaterials.cpp" />
+    <ClCompile Include="..\external\assimp\code\RemoveVCProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\SceneCombiner.cpp" />
+    <ClCompile Include="..\external\assimp\code\ScenePreprocessor.cpp" />
+    <ClCompile Include="..\external\assimp\code\SGSpatialSort.cpp" />
+    <ClCompile Include="..\external\assimp\code\SkeletonMeshBuilder.cpp" />
+    <ClCompile Include="..\external\assimp\code\SMDLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\SortByPTypeProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\SpatialSort.cpp" />
+    <ClCompile Include="..\external\assimp\code\SplitByBoneCountProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\SplitLargeMeshes.cpp" />
+    <ClCompile Include="..\external\assimp\code\StandardShapes.cpp" />
+    <ClCompile Include="..\external\assimp\code\StepExporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\STEPFileEncoding.cpp" />
+    <ClCompile Include="..\external\assimp\code\STEPFileReader.cpp" />
+    <ClCompile Include="..\external\assimp\code\STLExporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\STLLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\Subdivision.cpp" />
+    <ClCompile Include="..\external\assimp\code\TargetAnimation.cpp" />
+    <ClCompile Include="..\external\assimp\code\TerragenLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\TextureTransform.cpp" />
+    <ClCompile Include="..\external\assimp\code\TriangulateProcess.cpp" />
+    <ClCompile Include="..\external\assimp\code\UnrealLoader.cpp" />
+    <ClCompile Include="..\external\assimp\code\ValidateDataStructure.cpp" />
+    <ClCompile Include="..\external\assimp\code\Version.cpp" />
+    <ClCompile Include="..\external\assimp\code\VertexTriangleAdjacency.cpp" />
+    <ClCompile Include="..\external\assimp\code\XFileExporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\XFileImporter.cpp" />
+    <ClCompile Include="..\external\assimp\code\XFileParser.cpp" />
+    <ClCompile Include="..\external\assimp\code\XGLLoader.cpp" />
+    <ClCompile Include="..\external\assimp\contrib\clipper\clipper.cpp" />
+    <ClCompile Include="..\external\assimp\contrib\ConvertUTF\ConvertUTF.c" />
+    <ClCompile Include="..\external\assimp\contrib\irrXML\irrXML.cpp" />
+    <ClCompile Include="..\external\assimp\contrib\openddlparser\code\DDLNode.cpp" />
+    <ClCompile Include="..\external\assimp\contrib\openddlparser\code\OpenDDLCommon.cpp" />
+    <ClCompile Include="..\external\assimp\contrib\openddlparser\code\OpenDDLExport.cpp" />
+    <ClCompile Include="..\external\assimp\contrib\openddlparser\code\OpenDDLParser.cpp" />
+    <ClCompile Include="..\external\assimp\contrib\openddlparser\code\Value.cpp" />
+    <ClCompile Include="..\external\assimp\contrib\poly2tri\poly2tri\common\shapes.cc" />
+    <ClCompile Include="..\external\assimp\contrib\poly2tri\poly2tri\sweep\advancing_front.cc" />
+    <ClCompile Include="..\external\assimp\contrib\poly2tri\poly2tri\sweep\cdt.cc" />
+    <ClCompile Include="..\external\assimp\contrib\poly2tri\poly2tri\sweep\sweep.cc" />
+    <ClCompile Include="..\external\assimp\contrib\poly2tri\poly2tri\sweep\sweep_context.cc" />
+    <ClCompile Include="..\external\assimp\contrib\unzip\ioapi.c" />
+    <ClCompile Include="..\external\assimp\contrib\unzip\unzip.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\adler32.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\compress.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\crc32.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\deflate.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\gzclose.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\gzlib.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\gzread.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\gzwrite.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\infback.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\inffast.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\inflate.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\inftrees.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\trees.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\uncompr.c" />
+    <ClCompile Include="..\external\assimp\contrib\zlib\zutil.c" />
+    <ClCompile Include="..\GeneratedFiles\Debug\moc_LogWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\GeneratedFiles\Debug\moc_modelizer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GeneratedFiles\Debug\moc_OpenModelDialog.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\GeneratedFiles\qrc_modelizer.cpp">
@@ -87,8 +273,22 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\GeneratedFiles\qrc_style.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\GeneratedFiles\Release\moc_LogWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GeneratedFiles\Release\moc_OpenModelDialog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\LogWidget.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\modelizer.cpp" />
+    <ClCompile Include="..\src\OpenModelDialog.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\src\ui\modelizer.ui">
@@ -104,6 +304,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\GeneratedFiles\ui_modelizer.h" />
+    <CustomBuild Include="..\src\OpenModelDialog.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing OpenModelDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\..\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\..\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\..\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets" "-I.\..\src"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing OpenModelDialog.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\..\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\..\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\..\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets" "-I.\..\src"</Command>
+    </CustomBuild>
+    <CustomBuild Include="..\src\LogWidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing LogWidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\..\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\..\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\..\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing LogWidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\..\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DWIN64 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB "-I.\..\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\..\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtOpenGL" "-I$(QTDIR)\include\QtWidgets"</Command>
+    </CustomBuild>
     <CustomBuild Include="..\src\modelizer.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing modelizer.h...</Message>
@@ -126,6 +346,182 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o ..\GeneratedFiles\qrc_%(Filename).cpp</Command>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\src\ui\style.qrc">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FullPath);..\Resources\qdarkstyle\up_arrow_disabled.png;..\Resources\qdarkstyle\Hmovetoolbar.png;..\Resources\qdarkstyle\stylesheet-branch-end.png;..\Resources\qdarkstyle\branch_closed-on.png;..\Resources\qdarkstyle\stylesheet-vline.png;..\Resources\qdarkstyle\branch_closed.png;..\Resources\qdarkstyle\branch_open-on.png;..\Resources\qdarkstyle\transparent.png;..\Resources\qdarkstyle\right_arrow_disabled.png;..\Resources\qdarkstyle\sizegrip.png;..\Resources\qdarkstyle\close.png;..\Resources\qdarkstyle\close-hover.png;..\Resources\qdarkstyle\close-pressed.png;..\Resources\qdarkstyle\down_arrow.png;..\Resources\qdarkstyle\Vmovetoolbar.png;..\Resources\qdarkstyle\left_arrow.png;..\Resources\qdarkstyle\stylesheet-branch-more.png;..\Resources\qdarkstyle\up_arrow.png;..\Resources\qdarkstyle\right_arrow.png;..\Resources\qdarkstyle\left_arrow_disabled.png;..\Resources\qdarkstyle\Hsepartoolbar.png;..\Resources\qdarkstyle\branch_open.png;..\Resources\qdarkstyle\Vsepartoolbar.png;..\Resources\qdarkstyle\down_arrow_disabled.png;..\Resources\qdarkstyle\undock.png;..\Resources\qdarkstyle\checkbox_checked_disabled.png;..\Resources\qdarkstyle\checkbox_checked_focus.png;..\Resources\qdarkstyle\checkbox_checked.png;..\Resources\qdarkstyle\checkbox_indeterminate.png;..\Resources\qdarkstyle\checkbox_indeterminate_focus.png;..\Resources\qdarkstyle\checkbox_unchecked_disabled.png;..\Resources\qdarkstyle\checkbox_unchecked_focus.png;..\Resources\qdarkstyle\checkbox_unchecked.png;..\Resources\qdarkstyle\radio_checked_disabled.png;..\Resources\qdarkstyle\radio_checked_focus.png;..\Resources\qdarkstyle\radio_checked.png;..\Resources\qdarkstyle\radio_unchecked_disabled.png;..\Resources\qdarkstyle\radio_unchecked_focus.png;..\Resources\qdarkstyle\radio_unchecked.png;..\src\ui\style.qss;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\..\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\..\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FullPath);..\Resources\qdarkstyle\up_arrow_disabled.png;..\Resources\qdarkstyle\Hmovetoolbar.png;..\Resources\qdarkstyle\stylesheet-branch-end.png;..\Resources\qdarkstyle\branch_closed-on.png;..\Resources\qdarkstyle\stylesheet-vline.png;..\Resources\qdarkstyle\branch_closed.png;..\Resources\qdarkstyle\branch_open-on.png;..\Resources\qdarkstyle\transparent.png;..\Resources\qdarkstyle\right_arrow_disabled.png;..\Resources\qdarkstyle\sizegrip.png;..\Resources\qdarkstyle\close.png;..\Resources\qdarkstyle\close-hover.png;..\Resources\qdarkstyle\close-pressed.png;..\Resources\qdarkstyle\down_arrow.png;..\Resources\qdarkstyle\Vmovetoolbar.png;..\Resources\qdarkstyle\left_arrow.png;..\Resources\qdarkstyle\stylesheet-branch-more.png;..\Resources\qdarkstyle\up_arrow.png;..\Resources\qdarkstyle\right_arrow.png;..\Resources\qdarkstyle\left_arrow_disabled.png;..\Resources\qdarkstyle\Hsepartoolbar.png;..\Resources\qdarkstyle\branch_open.png;..\Resources\qdarkstyle\Vsepartoolbar.png;..\Resources\qdarkstyle\down_arrow_disabled.png;..\Resources\qdarkstyle\undock.png;..\Resources\qdarkstyle\checkbox_checked_disabled.png;..\Resources\qdarkstyle\checkbox_checked_focus.png;..\Resources\qdarkstyle\checkbox_checked.png;..\Resources\qdarkstyle\checkbox_indeterminate.png;..\Resources\qdarkstyle\checkbox_indeterminate_focus.png;..\Resources\qdarkstyle\checkbox_unchecked_disabled.png;..\Resources\qdarkstyle\checkbox_unchecked_focus.png;..\Resources\qdarkstyle\checkbox_unchecked.png;..\Resources\qdarkstyle\radio_checked_disabled.png;..\Resources\qdarkstyle\radio_checked_focus.png;..\Resources\qdarkstyle\radio_checked.png;..\Resources\qdarkstyle\radio_unchecked_disabled.png;..\Resources\qdarkstyle\radio_unchecked_focus.png;..\Resources\qdarkstyle\radio_unchecked.png;..\src\ui\style.qss;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\..\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\..\GeneratedFiles\qrc_%(Filename).cpp</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\qdarkstyle\branch_closed-on.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\branch_closed.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\branch_open-on.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\branch_open.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_checked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_checked_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_checked_focus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_indeterminate.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_indeterminate_focus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_unchecked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_unchecked_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_unchecked_focus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\close-hover.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\close-pressed.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\close.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\down_arrow.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\down_arrow_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\Hmovetoolbar.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\Hsepartoolbar.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\left_arrow.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\left_arrow_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\radio_checked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\radio_checked_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\radio_checked_focus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\radio_unchecked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\radio_unchecked_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\radio_unchecked_focus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\right_arrow.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\right_arrow_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\sizegrip.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\stylesheet-branch-end.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\stylesheet-branch-more.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\stylesheet-vline.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\transparent.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\undock.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\up_arrow.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\up_arrow_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\Vmovetoolbar.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\Vsepartoolbar.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\ui\style.qss">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

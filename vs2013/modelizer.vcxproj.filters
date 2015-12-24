@@ -33,6 +33,12 @@
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Header Dateien\assimp">
+      <UniqueIdentifier>{fe2f7eba-888b-4d1d-ab4a-237b251234c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Dateien\assimp">
+      <UniqueIdentifier>{7594f772-68f8-40a5-9cc1-a5574e0edf12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -47,6 +53,567 @@
     <ClCompile Include="..\GeneratedFiles\qrc_modelizer.cpp">
       <Filter>Generierte Dateien\Debug</Filter>
     </ClCompile>
+    <ClCompile Include="..\GeneratedFiles\qrc_style.cpp">
+      <Filter>Generierte Dateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GeneratedFiles\Debug\moc_LogWidget.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GeneratedFiles\Release\moc_LogWidget.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LogWidget.cpp">
+      <Filter>Source Dateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\OpenModelDialog.cpp">
+      <Filter>Source Dateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GeneratedFiles\Debug\moc_OpenModelDialog.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GeneratedFiles\Release\moc_OpenModelDialog.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\3DSConverter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\3DSExporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\3DSLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ACLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ASELoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ASEParser.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\AssbinExporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\AssbinLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\Assimp.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\AssimpCExport.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\AssxmlExporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\B3DImporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\BaseImporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\BaseProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\Bitmap.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\BlenderBMesh.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\BlenderDNA.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\BlenderLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\BlenderModifier.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\BlenderScene.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\BlenderTessellator.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\BVHLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\C4DImporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\CalcTangentsProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\COBLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ColladaExporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ColladaLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ColladaParser.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ComputeUVMappingProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ConvertToLHProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\CSMLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\DeboneProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\DefaultIOStream.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\DefaultIOSystem.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\DefaultLogger.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\DXFLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\Exporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXAnimation.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXBinaryTokenizer.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXConverter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXDeformer.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXDocument.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXDocumentUtil.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXImporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXMaterial.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXMeshGeometry.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXModel.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXNodeAttribute.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXParser.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXProperties.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXTokenizer.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FBXUtil.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FindDegenerates.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FindInstancesProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FindInvalidDataProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\FixNormalsStep.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\GenFaceNormalsProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\GenVertexNormalsProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\glTFImporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\HMPLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\IFCBoolean.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\IFCCurve.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\IFCGeometry.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\IFCLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\IFCMaterial.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\IFCOpenings.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\IFCProfile.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\IFCReaderGen.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\IFCUtil.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\Importer.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ImporterRegistry.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ImproveCacheLocality.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\IRRLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\IRRMeshLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\IRRShared.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\JoinVerticesProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\LimitBoneWeightsProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\LWOAnimation.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\LWOBLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\LWOLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\LWOMaterial.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\LWSLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\MakeVerboseFormat.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\MaterialSystem.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\MD2Loader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\MD3Loader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\MD5Loader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\MD5Parser.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\MDCLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\MDLLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\MDLMaterialLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\MS3DLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\NDOLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\NFFLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ObjExporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ObjFileImporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ObjFileMtlImporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ObjFileParser.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\OFFLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\OgreBinarySerializer.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\OgreImporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\OgreMaterial.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\OgreStructs.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\OgreXmlSerializer.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\OpenGEXExporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\OpenGEXImporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\OptimizeGraph.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\OptimizeMeshes.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\PlyExporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\PlyLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\PlyParser.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\PostStepRegistry.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\PretransformVertices.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ProcessHelper.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\Q3BSPFileImporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\Q3BSPFileParser.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\Q3BSPZipArchive.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\Q3DLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\RawLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\RemoveComments.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\RemoveRedundantMaterials.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\RemoveVCProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\SceneCombiner.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ScenePreprocessor.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\SGSpatialSort.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\SkeletonMeshBuilder.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\SMDLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\SortByPTypeProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\SpatialSort.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\SplitByBoneCountProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\SplitLargeMeshes.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\StandardShapes.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\StepExporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\STEPFileEncoding.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\STEPFileReader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\STLExporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\STLLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\Subdivision.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\TargetAnimation.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\TerragenLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\TextureTransform.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\TriangulateProcess.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\UnrealLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\ValidateDataStructure.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\Version.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\VertexTriangleAdjacency.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\XFileExporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\XFileImporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\XFileParser.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\XGLLoader.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\clipper\clipper.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\ConvertUTF\ConvertUTF.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\openddlparser\code\DDLNode.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\openddlparser\code\OpenDDLCommon.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\openddlparser\code\OpenDDLExport.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\openddlparser\code\OpenDDLParser.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\openddlparser\code\Value.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\poly2tri\poly2tri\common\shapes.cc">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\poly2tri\poly2tri\sweep\advancing_front.cc">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\poly2tri\poly2tri\sweep\cdt.cc">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\poly2tri\poly2tri\sweep\sweep.cc">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\poly2tri\poly2tri\sweep\sweep_context.cc">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\unzip\ioapi.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\unzip\unzip.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\adler32.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\compress.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\crc32.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\deflate.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\gzclose.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\gzlib.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\gzread.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\gzwrite.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\infback.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\inffast.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\inflate.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\inftrees.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\trees.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\uncompr.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\zlib\zutil.c">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\contrib\irrXML\irrXML.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\src\ui\modelizer.ui">
@@ -58,10 +625,143 @@
     <CustomBuild Include="..\src\ui\modelizer.qrc">
       <Filter>Resource Dateien</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\src\ui\style.qrc">
+      <Filter>Resource Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\LogWidget.h">
+      <Filter>Header Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\OpenModelDialog.h">
+      <Filter>Header Dateien</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\GeneratedFiles\ui_modelizer.h">
       <Filter>Generierte Dateien\Debug</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\qdarkstyle\up_arrow_disabled.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\Hmovetoolbar.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\stylesheet-branch-end.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\branch_closed-on.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\stylesheet-vline.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\branch_closed.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\branch_open-on.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\transparent.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\right_arrow_disabled.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\sizegrip.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\close.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\close-hover.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\close-pressed.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\down_arrow.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\Vmovetoolbar.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\left_arrow.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\stylesheet-branch-more.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\up_arrow.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\right_arrow.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\left_arrow_disabled.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\Hsepartoolbar.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\branch_open.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\Vsepartoolbar.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\down_arrow_disabled.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\undock.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_checked_disabled.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_checked_focus.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_checked.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_indeterminate.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_indeterminate_focus.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_unchecked_disabled.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_unchecked_focus.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\checkbox_unchecked.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\radio_checked_disabled.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\radio_checked_focus.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\radio_checked.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\radio_unchecked_disabled.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\radio_unchecked_focus.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+    <Image Include="..\Resources\qdarkstyle\radio_unchecked.png">
+      <Filter>Resource Dateien</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\ui\style.qss">
+      <Filter>Resource Dateien</Filter>
+    </None>
   </ItemGroup>
 </Project>
