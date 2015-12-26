@@ -3,6 +3,7 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_modelizer.h"
+#include "Model.h"
 
 class modelizer : public QMainWindow
 {
@@ -25,6 +26,7 @@ private:
 	void InitToolbar();
 
 	Ui::modelizerClass ui;
+	Model *m_Model;
 };
 
 #endif // MODELIZER_H

@@ -2,6 +2,7 @@
 #include "modelizer.h"
 #include <QtWidgets/QToolButton>
 #include "OpenModelDialog.h"
+#include "Model.h"
 
 LogWidget * modelizer::Log = nullptr;
 
@@ -13,7 +14,7 @@ modelizer::modelizer(QWidget *parent)
 	InitToolbar();
 	Log = ui.logWidget;
 
-
+	m_Model = NULL;
 }
 
 modelizer::~modelizer()
@@ -112,7 +113,12 @@ void modelizer::on_actionImport_triggered()
 	{
 		fileNames = dialog.selectedFiles();
 
+		if (fileNames.count() <= 0) return;
+
 		QFileInfo info(fileNames.first());
 		Log->AppendMessage("Loading model '" + info.fileName() + "'...");
+
+		delete m_Model;
+		m_Model = Model::Load(fileNames.first(), dialog.GetFlags());
 	}
 }
