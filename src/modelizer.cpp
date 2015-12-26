@@ -1,7 +1,7 @@
+
 #include "modelizer.h"
 #include <QtWidgets/QToolButton>
 #include "OpenModelDialog.h"
-
 
 LogWidget * modelizer::Log = nullptr;
 
@@ -12,6 +12,8 @@ modelizer::modelizer(QWidget *parent)
 	ui.setupUi(this);
 	InitToolbar();
 	Log = ui.logWidget;
+
+
 }
 
 modelizer::~modelizer()

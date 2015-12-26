@@ -31,7 +31,7 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QOpenGLWidget" name="openGLWidget">
+     <widget class="ModelViewWidget" name="openGLWidget">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -140,6 +140,11 @@
    <class>LogWidget</class>
    <extends>QPlainTextEdit</extends>
    <header>LogWidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ModelViewWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>modelviewwidget.h</header>
   </customwidget>
  </customwidgets>
  <resources>
