@@ -15,7 +15,7 @@ public:
 
 
 	static LogWidget *Log;
-
+	static Model *m_Model;
 	
 private slots:
 
@@ -32,7 +32,6 @@ private:
 	void InitToolbar();
 
 	Ui::modelizerClass ui;
-	Model *m_Model;
 
 };
 

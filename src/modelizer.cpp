@@ -5,6 +5,8 @@
 #include "Model.h"
 
 LogWidget * modelizer::Log = nullptr;
+Model * modelizer::m_Model = nullptr;
+
 
 
 modelizer::modelizer(QWidget *parent)
@@ -14,8 +16,6 @@ modelizer::modelizer(QWidget *parent)
 	InitToolbar();
 	Log = ui.logWidget;
 
-	m_Model = NULL;
-
 	QObject::connect(this, SIGNAL(BeginLoadModel(const QString, unsigned int)), this, SLOT(onLoadModel(const QString, unsigned int)));
 
 }
@@ -23,6 +23,7 @@ modelizer::modelizer(QWidget *parent)
 modelizer::~modelizer()
 {
 	delete m_Model;
+	m_Model = nullptr;
 }
 
 void modelizer::InitToolbar()
@@ -128,5 +129,7 @@ void modelizer::on_actionImport_triggered()
 void modelizer::onLoadModel(const QString path, unsigned int flags)
 {
 	delete m_Model;
+	m_Model = nullptr;
 	m_Model = Model::Load(path, flags);
+	update();
 }

@@ -48,8 +48,14 @@ void ModelViewWidget::paintGL()
 
 	m_GridShader.setUniformValue("MVPMatrix", m_ProjectionMatrix*m_ViewMatrix*m_GridModelMatrix);
 	glDrawArrays(GL_LINES, 0, m_GridVertexCount);
-
 	m_GridVao.release();
+
+	if (modelizer::m_Model)
+	{
+		m_UnlitShader.bind();
+		m_UnlitShader.setUniformValue("MVMatrix", m_ProjectionMatrix*m_ViewMatrix);
+		modelizer::m_Model->Render(&m_UnlitShader);
+	}
 }
 
 void ModelViewWidget::resizeGL(int width, int height)
@@ -86,7 +92,7 @@ void ModelViewWidget::SetupGridMesh()
 
 	VertexList vertices;
 	FaceList faces;
-	for (int y = 0; y < 40; y++)
+	for (int y = 0; y < 41; y++)
 	{
 		Vertex v(QVector3D(0.0f, 0, y*0.5f), QVector3D(0, 1, 0), QVector2D(0, 0), QVector4D(1.0f, 1.0f, 1.0f, 0.5f));
 		vertices.push_back(v);
@@ -132,6 +138,21 @@ void ModelViewWidget::SetupShaders()
 	m_GridShader.setAttributeBuffer(MODEL_TEXCOORD_LOCATION, GL_FLOAT, sizeof(QVector3D) * 2, 2, sizeof(Vertex));
 	m_GridShader.setAttributeBuffer(MODEL_VERTEX_COLOR_LOCATION, GL_FLOAT, sizeof(QVector3D) * 2 + sizeof(QVector2D), 4, sizeof(Vertex));
 
+
+
+	if (!m_UnlitShader.addShaderFromSourceCode(QOpenGLShader::Vertex,
+#include "Shaders/unlit.vs"
+		))
+		modelizer::Log->AppendError(m_UnlitShader.log());
+	if (!m_UnlitShader.addShaderFromSourceCode(QOpenGLShader::Fragment,
+#include "Shaders/unlit.fs"
+		))
+		modelizer::Log->AppendError(m_UnlitShader.log());
+
+	if (!m_UnlitShader.link())
+	{
+		modelizer::Log->AppendError(m_UnlitShader.log());
+	}
 }
 
 void ModelViewWidget::keyPressEvent(QKeyEvent * event)

@@ -42,4 +42,5 @@ private:
 	QMatrix4x4 m_GridModelMatrix;
 
 	QOpenGLShaderProgram m_GridShader;
+	QOpenGLShaderProgram m_UnlitShader;
 };
