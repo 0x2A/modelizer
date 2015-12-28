@@ -6,6 +6,7 @@
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
+#include <QOpenGLTexture>
 
 class Model
 {
@@ -29,7 +30,8 @@ private:
 	const aiScene *m_Scene;
 	Assimp::Importer m_Importer;
 
-	std::map<std::string, unsigned int*> m_TextureIdMap;	// map image filenames to textureIds
+	std::map<std::string, QOpenGLTexture*> m_TextureIdMap;	// map image filenames to textureIds
 	int m_TotalVertices;
 	
+	QString m_BasePath;
 };

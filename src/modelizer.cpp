@@ -15,11 +15,14 @@ modelizer::modelizer(QWidget *parent)
 	Log = ui.logWidget;
 
 	m_Model = NULL;
+
+	QObject::connect(this, SIGNAL(BeginLoadModel(const QString, unsigned int)), this, SLOT(onLoadModel(const QString, unsigned int)));
+
 }
 
 modelizer::~modelizer()
 {
-
+	delete m_Model;
 }
 
 void modelizer::InitToolbar()
@@ -117,8 +120,13 @@ void modelizer::on_actionImport_triggered()
 
 		QFileInfo info(fileNames.first());
 		Log->AppendMessage("Loading model '" + info.fileName() + "'...");
-
-		delete m_Model;
-		m_Model = Model::Load(fileNames.first(), dialog.GetFlags());
+		
+		emit BeginLoadModel(fileNames.first(), dialog.GetFlags());
 	}
+}
+
+void modelizer::onLoadModel(const QString path, unsigned int flags)
+{
+	delete m_Model;
+	m_Model = Model::Load(path, flags);
 }

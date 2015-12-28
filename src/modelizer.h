@@ -21,12 +21,19 @@ private slots:
 
 	void on_actionImport_triggered();
 
+	void onLoadModel(const QString path, unsigned int flags);
+
+signals:
+
+	void BeginLoadModel(const QString path, unsigned int flags);
+
 private:
 
 	void InitToolbar();
 
 	Ui::modelizerClass ui;
 	Model *m_Model;
+
 };
 
 #endif // MODELIZER_H
