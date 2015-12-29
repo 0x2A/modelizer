@@ -154,7 +154,7 @@ void Model::RecursiveRender(QOpenGLShaderProgram* shader, QMatrix4x4 inpMat, con
 
 					if (mesh->HasTextureCoords(0))		//HasTextureCoords(texture_coordinates_set)
 					{
-						glTexCoord2f(mesh->mTextureCoords[0][vertexIndex].x, mesh->mTextureCoords[0][vertexIndex].y); //mTextureCoords[channel][vertex]
+						glTexCoord2f(mesh->mTextureCoords[0][vertexIndex].x, 1.0f - mesh->mTextureCoords[0][vertexIndex].y); //mTextureCoords[channel][vertex]
 					}
 
 				glNormal3fv(&mesh->mNormals[vertexIndex].x);
@@ -223,18 +223,18 @@ void Model::ApplyMaterial(QOpenGLShaderProgram* shader, const aiMaterial *mtl)
 	max = 1;
 	ret2 = aiGetMaterialFloatArray(mtl, AI_MATKEY_SHININESS_STRENGTH, &strength, &max);
 	if ((ret1 == AI_SUCCESS) && (ret2 == AI_SUCCESS))
-		shader->setUniformValue("shininess", shininess * strength);
+		shader->setUniformValue("shininess", shininess /* * strength */);
 	else
 		shader->setUniformValue("shininess", 0.0f);
 
-	max = 1;
+	/*max = 1;
 	int wireframe;
 	GLenum fill_mode;
 	if (AI_SUCCESS == aiGetMaterialIntegerArray(mtl, AI_MATKEY_ENABLE_WIREFRAME, &wireframe, &max))
 		fill_mode = wireframe ? GL_LINE : GL_FILL;
 	else
 		fill_mode = GL_FILL;
-	glPolygonMode(GL_FRONT_AND_BACK, fill_mode);
+	glPolygonMode(GL_FRONT_AND_BACK, fill_mode);*/
 
 	max = 1;
 	int two_sided;

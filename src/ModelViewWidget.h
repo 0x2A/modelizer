@@ -5,6 +5,14 @@
 #include <QOpenGLVertexArrayObject>
 #include <QOpenGLShaderProgram>
 
+
+enum class RenderMode
+{
+	blinn,
+	unlit,
+	wireframe
+};
+
 class ModelViewWidget : public QOpenGLWidget
 {
 	Q_OBJECT
@@ -12,7 +20,7 @@ class ModelViewWidget : public QOpenGLWidget
 public:
 	explicit ModelViewWidget(QWidget *parent = 0);
 
-
+	void SetRenderMode(RenderMode mode);
 	
 protected:
 
@@ -43,4 +51,7 @@ private:
 
 	QOpenGLShaderProgram m_GridShader;
 	QOpenGLShaderProgram m_UnlitShader;
+	QOpenGLShaderProgram m_BlinnShader;
+
+	RenderMode m_RenderMode;
 };

@@ -14,6 +14,8 @@ ModelViewWidget::ModelViewWidget(QWidget *parent /*= 0*/) : QOpenGLWidget(parent
 	format.setOptions(QSurfaceFormat::DebugContext);
 #endif
 	QSurfaceFormat::setDefaultFormat(format);
+
+	m_RenderMode = RenderMode::blinn;
 }
 
 void ModelViewWidget::initializeGL()
@@ -52,9 +54,28 @@ void ModelViewWidget::paintGL()
 
 	if (modelizer::m_Model)
 	{
-		m_UnlitShader.bind();
-		m_UnlitShader.setUniformValue("MVMatrix", m_ProjectionMatrix*m_ViewMatrix);
-		modelizer::m_Model->Render(&m_UnlitShader);
+		QOpenGLShaderProgram *shader;
+		switch (m_RenderMode)
+		{
+		case RenderMode::wireframe:
+			shader = &m_UnlitShader;
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+			break;
+		case RenderMode::unlit:
+			shader = &m_UnlitShader;
+			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+			break;
+		default:
+		case RenderMode::blinn:
+			shader = &m_BlinnShader;
+			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+			break;
+		}
+			
+		shader->bind();
+		shader->setUniformValue("VPMatrix", m_ProjectionMatrix*m_ViewMatrix);
+		shader->setUniformValue("ViewMatrix", m_ViewMatrix);
+		modelizer::m_Model->Render(shader);
 	}
 }
 
@@ -139,7 +160,7 @@ void ModelViewWidget::SetupShaders()
 	m_GridShader.setAttributeBuffer(MODEL_VERTEX_COLOR_LOCATION, GL_FLOAT, sizeof(QVector3D) * 2 + sizeof(QVector2D), 4, sizeof(Vertex));
 
 
-
+	//unlit shader
 	if (!m_UnlitShader.addShaderFromSourceCode(QOpenGLShader::Vertex,
 #include "Shaders/unlit.vs"
 		))
@@ -153,8 +174,28 @@ void ModelViewWidget::SetupShaders()
 	{
 		modelizer::Log->AppendError(m_UnlitShader.log());
 	}
+
+	//blinn shader
+	if (!m_BlinnShader.addShaderFromSourceCode(QOpenGLShader::Vertex,
+#include "Shaders/blinn.vs"
+		))
+		modelizer::Log->AppendError(m_BlinnShader.log());
+	if (!m_BlinnShader.addShaderFromSourceCode(QOpenGLShader::Fragment,
+#include "Shaders/blinn.fs"
+		))
+		modelizer::Log->AppendError(m_BlinnShader.log());
+
+	if (!m_BlinnShader.link())
+	{
+		modelizer::Log->AppendError(m_BlinnShader.log());
+	}
 }
 
 void ModelViewWidget::keyPressEvent(QKeyEvent * event)
 {
+}
+
+void ModelViewWidget::SetRenderMode(RenderMode mode)
+{
+	m_RenderMode = mode;
 }

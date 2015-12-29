@@ -40,12 +40,12 @@ void modelizer::InitToolbar()
 
 	ui.toolBar->addSeparator();
 
-	tb = new QToolButton;
+	/*tb = new QToolButton;
 	tb->setDefaultAction(ui.actionBatch_convert);
 	tb->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 	ui.toolBar->addWidget(tb);
 
-	ui.toolBar->addSeparator();
+	ui.toolBar->addSeparator();*/
 
 	tb = new QToolButton;
 	tb->setDefaultAction(ui.actionSettings);
@@ -131,5 +131,32 @@ void modelizer::onLoadModel(const QString path, unsigned int flags)
 	delete m_Model;
 	m_Model = nullptr;
 	m_Model = Model::Load(path, flags);
+	update();
+}
+
+void modelizer::on_actionBlinn_triggered()
+{
+	ui.actionBlinn->setChecked(true);
+	ui.actionUnlit->setChecked(false);
+	ui.actionWireframe->setChecked(false);
+	ui.openGLWidget->SetRenderMode(RenderMode::blinn);
+	update();
+}
+
+void modelizer::on_actionUnlit_triggered()
+{
+	ui.actionBlinn->setChecked(false);
+	ui.actionUnlit->setChecked(true);
+	ui.actionWireframe->setChecked(false);
+	ui.openGLWidget->SetRenderMode(RenderMode::unlit);
+	update();
+}
+
+void modelizer::on_actionWireframe_triggered()
+{
+	ui.actionBlinn->setChecked(false);
+	ui.actionUnlit->setChecked(false);
+	ui.actionWireframe->setChecked(true);
+	ui.openGLWidget->SetRenderMode(RenderMode::wireframe);
 	update();
 }

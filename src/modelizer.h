@@ -20,6 +20,9 @@ public:
 private slots:
 
 	void on_actionImport_triggered();
+	void on_actionBlinn_triggered();
+	void on_actionUnlit_triggered();
+	void on_actionWireframe_triggered();
 
 	void onLoadModel(const QString path, unsigned int flags);
 
@@ -32,6 +35,8 @@ private:
 	void InitToolbar();
 
 	Ui::modelizerClass ui;
+
+
 
 };
 

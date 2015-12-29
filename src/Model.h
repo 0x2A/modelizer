@@ -16,7 +16,6 @@ public:
 
 	~Model();
 	static Model* Load(const QString path, unsigned int flags);
-
 	void Render(QOpenGLShaderProgram* shader);
 
 protected:
