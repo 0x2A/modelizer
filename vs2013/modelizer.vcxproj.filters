@@ -629,6 +629,9 @@
     <ClCompile Include="..\GeneratedFiles\Release\moc_modelizer.cpp">
       <Filter>Generierte Dateien\Release</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\OrbitCamera.cpp">
+      <Filter>Source Dateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\src\ui\modelizer.ui">
@@ -661,6 +664,9 @@
       <Filter>Header Dateien</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Mesh.h">
+      <Filter>Header Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\OrbitCamera.h">
       <Filter>Header Dateien</Filter>
     </ClInclude>
   </ItemGroup>

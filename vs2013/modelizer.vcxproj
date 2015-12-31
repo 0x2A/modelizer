@@ -377,6 +377,7 @@
     <ClCompile Include="..\src\modelizer.cpp" />
     <ClCompile Include="..\src\ModelViewWidget.cpp" />
     <ClCompile Include="..\src\OpenModelDialog.cpp" />
+    <ClCompile Include="..\src\OrbitCamera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\src\ui\modelizer.ui">
@@ -402,6 +403,7 @@
     <ClInclude Include="..\GeneratedFiles\ui_modelizer.h" />
     <ClInclude Include="..\src\Mesh.h" />
     <ClInclude Include="..\src\Model.h" />
+    <ClInclude Include="..\src\OrbitCamera.h" />
     <CustomBuild Include="..\src\ModelViewWidget.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>

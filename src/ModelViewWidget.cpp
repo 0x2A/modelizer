@@ -18,6 +18,12 @@ ModelViewWidget::ModelViewWidget(QWidget *parent /*= 0*/) : QOpenGLWidget(parent
 	m_RenderMode = RenderMode::blinn;
 }
 
+ModelViewWidget::~ModelViewWidget()
+{
+	delete m_Camera;
+	m_Camera = nullptr;
+}
+
 void ModelViewWidget::initializeGL()
 {
 	makeCurrent();
@@ -37,8 +43,9 @@ void ModelViewWidget::initializeGL()
 	SetupGridMesh();
 	SetupShaders();
 
-	m_ViewMatrix.lookAt(QVector3D(0,1,4),QVector3D(0,0,0), QVector3D(0,1,0));
-
+	m_Camera = new OrbitCamera(1.77f, 41.112f, QVector3D(0, 0, 0), QVector3D(0, 1, 0), 0.1f, 1000.0f);
+	m_Camera->SetPitch(45.0f);
+	m_Camera->SetYaw(-19.45f);
 	m_GridModelMatrix.translate(QVector3D(-10, 0, -10));
 }
 
@@ -48,7 +55,7 @@ void ModelViewWidget::paintGL()
 	m_GridShader.bind();
 	m_GridVao.bind();
 
-	m_GridShader.setUniformValue("MVPMatrix", m_ProjectionMatrix*m_ViewMatrix*m_GridModelMatrix);
+	m_GridShader.setUniformValue("MVPMatrix", m_Camera->ViewProjectionmatrix()*m_GridModelMatrix);
 	glDrawArrays(GL_LINES, 0, m_GridVertexCount);
 	m_GridVao.release();
 
@@ -73,8 +80,8 @@ void ModelViewWidget::paintGL()
 		}
 			
 		shader->bind();
-		shader->setUniformValue("VPMatrix", m_ProjectionMatrix*m_ViewMatrix);
-		shader->setUniformValue("ViewMatrix", m_ViewMatrix);
+		shader->setUniformValue("VPMatrix", m_Camera->ViewProjectionmatrix());
+		shader->setUniformValue("ViewMatrix", m_Camera->ViewMatrix());
 		modelizer::m_Model->Render(shader);
 	}
 }
@@ -83,21 +90,33 @@ void ModelViewWidget::resizeGL(int width, int height)
 {
 	glViewport(0, 0, width, height);
 
-	m_ProjectionMatrix.setToIdentity();
-	m_ProjectionMatrix.perspective(45.0f, (float)width / (float)height, 0.1f, 1000.0f);
+	m_Camera->SetAspectRatio((float)width / (float)height);
 }
 
 void ModelViewWidget::mouseMoveEvent(QMouseEvent *event)
 {
+	QPoint mPos = event->pos();
+	QPoint delta = mPos - m_LastMousePos;
+
+	auto buttons = event->buttons();
+	if (buttons & Qt::LeftButton || buttons & Qt::RightButton)
+	{
+		m_Camera->SetPitch(m_Camera->Pitch() - delta.x()*0.35f);
+		m_Camera->SetYaw(m_Camera->Yaw() - delta.y()*0.35f);
+	}
+	else if (buttons & Qt::MiddleButton)
+	{
+		QVector3D v = m_Camera->Right() * -delta.x() * 0.004f * m_Camera->Zoom();
+		v += m_Camera->Up() * -delta.y() * 0.004f * m_Camera->Zoom();
+		m_Camera->SetLookAt(m_Camera->LookAt() + v);
+	}
+	m_LastMousePos = mPos;
+	update();
 }
 
 void ModelViewWidget::mousePressEvent(QMouseEvent * event)
 {
-	if (event->button() == Qt::LeftButton)
-		m_ViewMatrix.translate(QVector3D(0, 0, 0.1f));
-	else if (event->button() == Qt::RightButton)
-		m_ViewMatrix.translate(QVector3D(0, 0, -0.1f));
-	update();
+	m_LastMousePos = event->pos();
 }
 
 void ModelViewWidget::SetupGridMesh()
@@ -199,3 +218,11 @@ void ModelViewWidget::SetRenderMode(RenderMode mode)
 {
 	m_RenderMode = mode;
 }
+
+void ModelViewWidget::wheelEvent(QWheelEvent *event)
+{
+	m_Camera->SetZoom(m_Camera->Zoom() - ((event->delta() / 240.0f)*qBound(0.05f, m_Camera->Zoom(), 2.0f)));
+	QOpenGLWidget::wheelEvent(event);
+	update();
+}
+

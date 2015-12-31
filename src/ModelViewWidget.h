@@ -4,6 +4,7 @@
 #include <QOpenGLBuffer>
 #include <QOpenGLVertexArrayObject>
 #include <QOpenGLShaderProgram>
+#include "OrbitCamera.h"
 
 
 enum class RenderMode
@@ -19,6 +20,7 @@ class ModelViewWidget : public QOpenGLWidget
 
 public:
 	explicit ModelViewWidget(QWidget *parent = 0);
+	~ModelViewWidget();
 
 	void SetRenderMode(RenderMode mode);
 	
@@ -30,6 +32,7 @@ protected:
 
 	void mouseMoveEvent(QMouseEvent *event);
 	void mousePressEvent(QMouseEvent * event);
+	void wheelEvent(QWheelEvent *event);
 
 	void keyPressEvent(QKeyEvent * event);
 
@@ -45,8 +48,7 @@ private:
 	QOpenGLVertexArrayObject m_GridVao;
 	int m_GridVertexCount;
 
-	QMatrix4x4 m_ProjectionMatrix;
-	QMatrix4x4 m_ViewMatrix;
+	OrbitCamera *m_Camera;
 	QMatrix4x4 m_GridModelMatrix;
 
 	QOpenGLShaderProgram m_GridShader;
@@ -54,4 +56,6 @@ private:
 	QOpenGLShaderProgram m_BlinnShader;
 
 	RenderMode m_RenderMode;
+
+	QPoint m_LastMousePos;
 };
