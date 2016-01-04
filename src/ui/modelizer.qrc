@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="modelizer">
+    <file>../../Resources/appbar.question.png</file>
     <file>../../Resources/icon.blinn.png</file>
     <file>../../Resources/icon.unlit.png</file>
     <file>../../Resources/icon.wireframe.png</file>

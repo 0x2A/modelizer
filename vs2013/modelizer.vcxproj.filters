@@ -632,6 +632,15 @@
     <ClCompile Include="..\src\OrbitCamera.cpp">
       <Filter>Source Dateien</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\AboutWindow.cpp">
+      <Filter>Source Dateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GeneratedFiles\Debug\moc_AboutWindow.cpp">
+      <Filter>Generierte Dateien\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GeneratedFiles\Release\moc_AboutWindow.cpp">
+      <Filter>Generierte Dateien\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\src\ui\modelizer.ui">
@@ -655,6 +664,12 @@
     <CustomBuild Include="..\src\ModelViewWidget.h">
       <Filter>Header Dateien</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\src\ui\about.ui">
+      <Filter>Form Dateien</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\AboutWindow.h">
+      <Filter>Header Dateien</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\GeneratedFiles\ui_modelizer.h">
@@ -668,6 +683,9 @@
     </ClInclude>
     <ClInclude Include="..\src\OrbitCamera.h">
       <Filter>Header Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GeneratedFiles\ui_about.h">
+      <Filter>Generierte Dateien</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

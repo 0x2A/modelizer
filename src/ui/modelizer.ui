@@ -6,9 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>725</width>
-    <height>476</height>
+    <width>781</width>
+    <height>558</height>
    </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
   </property>
   <property name="windowTitle">
    <string>modelizer</string>
@@ -37,6 +40,9 @@
         <width>0</width>
         <height>0</height>
        </size>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
       </property>
      </widget>
     </item>
@@ -202,6 +208,29 @@
    </property>
    <property name="shortcut">
     <string>3</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionAboutQt">
+   <property name="text">
+    <string>aboutQt</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionOpenHelpMenu">
+   <property name="text">
+    <string>OpenHelpMenu</string>
    </property>
   </action>
  </widget>

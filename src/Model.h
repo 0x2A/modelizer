@@ -4,6 +4,7 @@
 #include <QVector>
 #include <map>
 #include <assimp/Importer.hpp>
+#include <assimp/Exporter.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 #include <QOpenGLTexture>
@@ -16,7 +17,11 @@ public:
 
 	~Model();
 	static Model* Load(const QString path, unsigned int flags);
+	
+	void Export(const QString path, const QString formatId, unsigned int flags);
 	void Render(QOpenGLShaderProgram* shader);
+
+	Assimp::Exporter* GetExporter() { return &m_Exporter; }
 
 protected:
 
@@ -32,6 +37,8 @@ private:
 	//QVector<Texture2D*> m_Textures;
 	const aiScene *m_Scene;
 	Assimp::Importer m_Importer;
+	Assimp::Exporter m_Exporter;
+
 
 	std::map<std::string, QOpenGLTexture*> m_TextureIdMap;	// map image filenames to textureIds
 	int m_TotalVertices;

@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 	}
 
 	modelizer w;
+	w.setWindowTitle("Modelizer");
 	w.show();
 	return a.exec();
 }

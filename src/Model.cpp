@@ -243,3 +243,17 @@ void Model::ApplyMaterial(QOpenGLShaderProgram* shader, const aiMaterial *mtl)
 	else
 		glDisable(GL_CULL_FACE);
 }
+
+void Model::Export(const QString path, const QString formatId, unsigned int flags)
+{
+	//process events so a info message is printed to the GUI
+	qApp->processEvents();
+
+	Assimp::ExportProperties props;
+	if (m_Exporter.Export(m_Scene, formatId.toStdString(), path.toStdString(), flags) != aiReturn_SUCCESS)
+	{
+		modelizer::Log->AppendError(m_Exporter.GetErrorString());
+		return;
+	}
+	modelizer::Log->AppendMessage("Export finished successfully.");
+}
