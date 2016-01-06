@@ -641,6 +641,12 @@
     <ClCompile Include="..\GeneratedFiles\Release\moc_AboutWindow.cpp">
       <Filter>Generierte Dateien\Release</Filter>
     </ClCompile>
+    <ClCompile Include="..\external\assimp\code\glTFExporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\assimp\code\SIBImporter.cpp">
+      <Filter>Source Dateien\assimp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\src\ui\modelizer.ui">

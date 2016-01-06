@@ -70,7 +70,7 @@ private:
 
 	Ui::modelizerClass ui;
 	QMap<QString, QString> m_ExportTypeMap;
-
+	QStringList m_ImportFilters;
 
 };
 
