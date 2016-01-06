@@ -811,5 +811,6 @@
     <None Include="..\src\ui\style.qss">
       <Filter>Resource Dateien</Filter>
     </None>
+    <None Include="vs2013.licenseheader" />
   </ItemGroup>
 </Project>
