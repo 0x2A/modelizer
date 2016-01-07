@@ -26,6 +26,10 @@
 #include <QFile>
 #include <QFileInfo>
 
+
+Assimp::Exporter Model::Exporter;
+Assimp::Importer Model::Importer;
+
 Model* Model::Load(const QString path, unsigned int flags)
 {
 	if (!QFile::exists(path))
@@ -37,11 +41,11 @@ Model* Model::Load(const QString path, unsigned int flags)
 	qApp->processEvents();
 
 	Model *model = new Model;
-	model->m_Scene = model->m_Importer.ReadFile(path.toStdString(), flags);
+	model->m_Scene = Importer.ReadFile(path.toStdString(), flags);
 	// If the import failed, report it
 	if (!model->m_Scene)
 	{
-		modelizer::Log->AppendError(model->m_Importer.GetErrorString());
+		modelizer::Log->AppendError(Importer.GetErrorString());
 		delete model;
 		return nullptr;
 	}
@@ -273,10 +277,11 @@ void Model::Export(const QString path, const QString formatId, unsigned int flag
 	qApp->processEvents();
 
 	Assimp::ExportProperties props;
-	if (m_Exporter.Export(m_Scene, formatId.toStdString(), path.toStdString(), flags) != aiReturn_SUCCESS)
+	if (Exporter.Export(m_Scene, formatId.toStdString(), path.toStdString(), flags) != aiReturn_SUCCESS)
 	{
-		modelizer::Log->AppendError(m_Exporter.GetErrorString());
+		modelizer::Log->AppendError(Exporter.GetErrorString());
 		return;
 	}
 	modelizer::Log->AppendMessage("Export finished successfully.");
 }
+

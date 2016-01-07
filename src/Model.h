@@ -44,7 +44,9 @@ public:
 	void Export(const QString path, const QString formatId, unsigned int flags);
 	void Render(QOpenGLShaderProgram* shader);
 
-	Assimp::Exporter* GetExporter() { return &m_Exporter; }
+
+	static Assimp::Importer Importer;
+	static Assimp::Exporter Exporter;
 
 protected:
 
@@ -59,8 +61,6 @@ private:
 	//QVector<Mesh*> m_Meshes;
 	//QVector<Texture2D*> m_Textures;
 	const aiScene *m_Scene;
-	Assimp::Importer m_Importer;
-	Assimp::Exporter m_Exporter;
 
 
 	std::map<std::string, QOpenGLTexture*> m_TextureIdMap;	// map image filenames to textureIds

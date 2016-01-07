@@ -32,6 +32,8 @@
 #include "Model.h"
 #include "AboutWindow.h"
 #include <assimp/importerdesc.h>
+#include "formats/FBXExporter.h"
+
 
 LogWidget * modelizer::Log = nullptr;
 Model * modelizer::m_Model = nullptr;
@@ -48,23 +50,24 @@ modelizer::modelizer(QWidget *parent)
 	QObject::connect(this, SIGNAL(BeginLoadModel(const QString, unsigned int)), this, SLOT(onLoadModel(const QString, unsigned int)));
 	QObject::connect(this, SIGNAL(BeginSaveModel(const QString, const QString, unsigned int)), this, SLOT(onExportModel(const QString, const QString, unsigned int)));
 
+	//add custom formats to importer and exporter
+	Assimp::Exporter::ExportFormatEntry fbxExportFormatEntry("fbx", "Autodesk FBX", "fbx", &ExportSceneFbx);
+	Model::Exporter.RegisterExporter(fbxExportFormatEntry);
 
 	//build filter map
-	Assimp::Exporter exporter;
-	for (int i = 0; i < exporter.GetExportFormatCount(); i++)
+	for (int i = 0; i < Model::Exporter.GetExportFormatCount(); i++)
 	{
-		auto descr = exporter.GetExportFormatDescription(i);
+		auto descr = Model::Exporter.GetExportFormatDescription(i);
 		QString s("%1 (*.%2)");
 		s = s.arg(descr->description, descr->fileExtension);
 		m_ExportTypeMap[s] = descr->fileExtension;
 	}
 
 	//Build importer filter map
-	Assimp::Importer importer;
 	QString allFilesFilter = "All Model Formats (";
-	for (int i = 0; i < importer.GetImporterCount(); i++)
+	for (int i = 0; i < Model::Importer.GetImporterCount(); i++)
 	{
-		auto descr = importer.GetImporterInfo(i);
+		auto descr = Model::Importer.GetImporterInfo(i);
 		QString s("%1 (*.%2)");
 
 		QString extensions = QString(descr->mFileExtensions).replace(' ', " *.");
@@ -171,7 +174,7 @@ void modelizer::onExportModel(const QString path, const QString extension, unsig
 
 	//find format id from extension
 	QString formatId = "";
-	auto exporter = m_Model->GetExporter();
+	auto exporter = &Model::Exporter;
 	for (int i = 0; i < exporter->GetExportFormatCount(); i++)
 	{
 		auto descr = exporter->GetExportFormatDescription(i);

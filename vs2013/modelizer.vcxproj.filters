@@ -39,6 +39,12 @@
     <Filter Include="Source Dateien\assimp">
       <UniqueIdentifier>{7594f772-68f8-40a5-9cc1-a5574e0edf12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Dateien\formats">
+      <UniqueIdentifier>{86694239-f1aa-4844-98fe-5db23b67fa4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Dateien\formats">
+      <UniqueIdentifier>{c0972522-de84-4faa-987e-7ec69d4b7964}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -647,6 +653,9 @@
     <ClCompile Include="..\external\assimp\code\SIBImporter.cpp">
       <Filter>Source Dateien\assimp</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\formats\FBXExporter.cpp">
+      <Filter>Source Dateien\formats</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\src\ui\modelizer.ui">
@@ -692,6 +701,9 @@
     </ClInclude>
     <ClInclude Include="..\GeneratedFiles\ui_about.h">
       <Filter>Generierte Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\formats\FBXExporter.h">
+      <Filter>Header Dateien\formats</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
