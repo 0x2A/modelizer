@@ -51,8 +51,10 @@ modelizer::modelizer(QWidget *parent)
 	QObject::connect(this, SIGNAL(BeginSaveModel(const QString, const QString, unsigned int)), this, SLOT(onExportModel(const QString, const QString, unsigned int)));
 
 	//add custom formats to importer and exporter
+#ifndef MODELIZER_BUILD_NO_FBX_EXPORTER
 	Assimp::Exporter::ExportFormatEntry fbxExportFormatEntry("fbx", "Autodesk FBX", "fbx", &ExportSceneFbx);
 	Model::Exporter.RegisterExporter(fbxExportFormatEntry);
+#endif
 
 	//build filter map
 	for (int i = 0; i < Model::Exporter.GetExportFormatCount(); i++)

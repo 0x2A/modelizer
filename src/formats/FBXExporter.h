@@ -24,36 +24,42 @@
 
 #pragma once
 
+#ifndef MODELIZER_BUILD_NO_FBX_EXPORTER
+
 #include <assimp/types.h>
 #include <assimp/version.h>
 #include <assimp/IOSystem.hpp>
 #include <assimp/Exporter.hpp>
 #include <assimp/material.h>
 #include <assimp/scene.h>
-#include <boost/foreach.hpp>
-#include <boost/scoped_ptr.hpp>
 
+#include <fbxsdk.h>
 
 
 // ------------------------------------------------------------------------------------------------
 // Worker function for exporting a scene to Autodesk FBX.
 void ExportSceneFbx(const char* pFile, Assimp::IOSystem* pIOSystem, const aiScene* pScene, const Assimp::ExportProperties* pProperties);
 
-enum FbxVersion
-{
-	Fbx_2014 = 0xe81c0000,
-};
-class FbxExporter
+class mFbxExporter
 {
 public:
 
 	/// Constructor for a specific scene to export
-	FbxExporter(const char* filename, Assimp::IOSystem* pIOSystem, const aiScene* pScene, const Assimp::ExportProperties* pProperties);
+	mFbxExporter(const char* filename, Assimp::IOSystem* pIOSystem, const aiScene* pScene, const Assimp::ExportProperties* pProperties);
 
 
 private:
 
-	void WriteHeader(Assimp::IOStream* fStream);
+	void AddNode(FbxNode* fbxNode, const aiScene* scene, aiNode* node);
+	void AddMesh(FbxNode* fbxNode, const aiMesh* m);
+	void AiMatrixToFbxMatrix(FbxAMatrix &fbxMat, aiMatrix4x4 aiMat);
+	void AddMaterials(const aiScene* scene);
+	std::string GetMaterialName(const aiScene* scene, unsigned int index);
 
-	int m_Version;
+	void SaveScene(const char* pFilename, int pFileFormat, bool pEmbedMedia);
+
+	FbxManager* m_SdkManager;
+	FbxScene* m_Scene;
 };
+
+#endif
